@@ -1,0 +1,16 @@
+{
+	"scripts": {
+		"client-install": "cd ../rentingTools && npm install",
+		"server-install": "cd server && npm install",
+		"install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\""
+	},
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"cloudinary": "^1.27.1",
+		"concurrently": "^6.4.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"mongoose": "^6.1.1",
+		"nodemailer": "^6.7.2"
+	}
+}
