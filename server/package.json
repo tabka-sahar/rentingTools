@@ -1,5 +1,6 @@
 {
 	"scripts": {
+		"add-concurrently": "npm install concurrently",
 		"client-install": "cd ../rentingTools && npm install",
 		"server-install": "cd server && npm install",
 		"install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\""
