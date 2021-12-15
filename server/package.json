@@ -3,7 +3,8 @@
 		"add-concurrently": "npm install concurrently",
 		"client-install": "cd ../client && npm install",
 		"server-install": "npm install",
-		"install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\""
+		"install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\"",
+		"run-server":"nodemon index.js"
 	},
 	"dependencies": {
 		"bcrypt": "^5.0.1",
