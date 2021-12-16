@@ -1,23 +1,67 @@
 <div class="form-structor">
-	<form>
-	<div class="signup">
-		<h2 class="form-title" id="Login">Login</h2>
-		<div class="form-holder">
-			<input [ngModel]="username" (ngModelChange)="log($event)" name="username" type="text" class="input" placeholder="Username" required/>
-			<input [ngModel]="password" (ngModelChange)="log1($event)" name="password" type="password" class="input" placeholder="Password" required/>
-		</div>
-		<button type="submit" class="submit-btn" (click)="postData()">Login</button>
-		<a href="#" id="forgot">Forgot password?</a><br>
-
-	</div>
-	<div class="login slide-up">
-		<div class="center">
-<<<<<<< HEAD
-			<!-- <h2 class="form-title" id="Signup">Sign up</h2> -->
-=======
-			<h2 class="form-title" id="Signup">Sign up</h2>
->>>>>>> 26d680f73202d6c88ecc8a69909d229e2e33d3b9
-		</div>
-	</div>
-</form>
+  <form>
+    <div class="signup">
+      <h2 class="form-title" id="Login">Login</h2>
+      <div class="form-holder">
+        <input
+          [ngModel]="username"
+          (ngModelChange)="log($event)"
+          name="username"
+          type="text"
+          class="input"
+          placeholder="Username"
+          required
+        />
+        <input
+          [ngModel]="password"
+          (ngModelChange)="log1($event)"
+          name="password"
+          type="password"
+          class="input"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <button type="submit" class="submit-btn" (click)="postData()">
+        Login
+      </button>
+      <a href="#" id="forgot">Forgot password?</a><br />
+    </div>
+    <div class="login slide-up">
+      <div class="center">
+        <h2 class="form-title" id="Signup">Sign up</h2>
+      </div>
+    </div>
+  </form>
 </div>
+<form>
+  <div class="signup">
+    <h2 class="form-title" id="Login">Login</h2>
+    <div class="form-holder">
+      <input
+        [(ngModel)]="username"
+        name="username"
+        type="text"
+        class="input"
+        placeholder="Username"
+        required
+      />
+      <input
+        [ngModel]="password"
+        (ngModelChange)="log1($event)"
+        name="password"
+        type="password"
+        class="input"
+        placeholder="Password"
+        required
+      />
+    </div>
+    <button type="submit" class="submit-btn" (click)="postData()">Login</button>
+    <a href="#" id="forgot">Forgot password?</a><br />
+  </div>
+  <div class="login slide-up">
+    <div class="center">
+      <h2 class="form-title" id="Signup">Sign up</h2>
+    </div>
+  </div>
+</form>

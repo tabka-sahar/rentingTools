@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class UpdateProfileComponent implements OnInit {
   constructor() {}
   user = {
-    username: 'khalil hamzaoui',
+    fullname: 'khalil hamzaoui',
+    username: '@khalil_HZ',
     phone_number: 25485966,
     email: 'khlail@gmail.com',
     adrress: 'ariana cité elghazala',
