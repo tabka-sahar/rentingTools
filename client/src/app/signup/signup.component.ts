@@ -52,12 +52,12 @@ constructor(private signupService: SignupService) { }
 
 
  
-  myInsert() {
-    this.signupService.insertData().subscribe(
-      response => console.log(response),
-      err => console.log(err)
-    );
-  }
+  // myInsert() {
+  //   this.signupService.insertData().subscribe(
+  //     response => console.log(response),
+  //     err => console.log(err)
+  //   );
+  // }
 }
  
  

@@ -11,9 +11,9 @@ export class SignupService {
 
   constructor(private http: HttpClient) {}
 
-  insertData() {
-    const body = JSON.stringify({username: this, fullname: '', email: '',phone_number:'', password:});
-    return this.http.post('http://localhost:5000/users/signup', body, httpOptions);
-  }
+  // insertData() {
+  //   const body = JSON.stringify({username: '', fullname: '', email: '',phone_number:'', password:});
+  //   return this.http.post('http://localhost:5000/users/signup', body, httpOptions);
+  // }
 
 }
