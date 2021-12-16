@@ -14,7 +14,7 @@ constructor(private http:HttpClient){
 postData(){
   console.log(name);
   
-  let url = "http://localhost:5000/login"
+  let url = "http://localhost:5000/users/login"
   this.http.post(url,{
     username:this.username,
     password:this.password
