@@ -18,7 +18,7 @@ import { SignupComponent } from './signup/signup.component';
     UserProfileComponent,
     NavbareComponent,
     UpdateProfileComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,7 @@ import { SignupComponent } from './signup/signup.component';
       { path: '', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
       { path: 'user/update', component: UpdateProfileComponent },
-      {path:'users/signup',component: SignupComponent}
+      { path: 'users/signup', component: SignupComponent },
     ]),
   ],
   providers: [],
