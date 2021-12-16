@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
+<<<<<<< HEAD
 /* 
+=======
+
+>>>>>>> 26d680f73202d6c88ecc8a69909d229e2e33d3b9
 .form-structor {
   background-color: #222;
   border-radius: 15px;
@@ -103,7 +107,11 @@
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
   background-color: rgba(0, 0, 0, 0.8);
+<<<<<<< HEAD
 } */
+=======
+}
+>>>>>>> 26d680f73202d6c88ecc8a69909d229e2e33d3b9
 
 .form-structor .login {
   position: absolute;
