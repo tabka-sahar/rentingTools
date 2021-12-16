@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SignupService } from './signup/signupService';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'rentingTools';
+  constructor(private signupService: SignupService) { }
+  myInsert() {
+    this.signupService.insertData().subscribe(
+      response => console.log(response),
+      err => console.log(err)
+    );
+  }
+
+  // title = 'rentingTools';
 }

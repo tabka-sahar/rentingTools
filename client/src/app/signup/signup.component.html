@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RentingTools</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <div class="form-structor">
+    <div class="signup">
+      <h2 class="form-title" id="signup"><span></span>Sign up</h2>
+      <div class="form-holder">
+        <input [ngModel]="username"(ngModelChange) = "Username($event)" name = "username"type="text" class="input" placeholder="username" />
+        <input [ngModel]="fullname"(ngModelChange) = "Fullname($event)" name = "fullname" type="text" class="input" placeholder="fullname" />
+        <input [ngModel]="email"(ngModelChange) = "Email($event)" name = "email" type="text"  class="input" placeholder="email" />
+        <input [ngModel]="phone_number"(ngModelChange) = "Phone_number($event)"  name = "phone_number" type="text" class="input" placeholder="phone_number" />
+        <input [ngModel]="password"(ngModelChange) = "Password($event)" name = "password" type="text"  class="input" placeholder="password" />
+      </div>
+      <button class="submit-btn">Sign up</button>
+    </div>
+    
+  </div>
+  <!-- <app-root></app-root> -->
+</body>
+</html>
+
