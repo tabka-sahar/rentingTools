@@ -4,7 +4,11 @@
 		"client-install": "cd ../client && npm install",
 		"server-install": "npm install",
 		"install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\"",
+<<<<<<< Updated upstream
 		"run-server":"nodemon index.js"
+=======
+		"server-dev": "nodemon index.js"
+>>>>>>> Stashed changes
 	},
 	"dependencies": {
 		"bcrypt": "^5.0.1",
@@ -13,6 +17,7 @@
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"mongoose": "^6.1.1",
-		"nodemailer": "^6.7.2"
+		"nodemailer": "^6.7.2",
+		"nodemon": "^2.0.15"
 	}
 }
