@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbareComponent } from './navbare/navbare.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     UserProfileComponent,
     NavbareComponent,
     UpdateProfileComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
       { path: '', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
       { path: 'user/update', component: UpdateProfileComponent },
+      {path:'users/signup',component: SignupComponent}
     ]),
   ],
   providers: [],
