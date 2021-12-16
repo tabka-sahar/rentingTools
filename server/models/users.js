@@ -23,9 +23,7 @@ const userSchema = mongoose.Schema(
 		profile_image_uri: { type: String, default: "" },
 		verified: { type: Boolean, default: true },
 	},
-	{ timestamps: true },
-	{ versionKey: false }
+	{ timestamps: true, versionKey: false }
 );
 
 module.exports = mongoose.model("User", userSchema);
-

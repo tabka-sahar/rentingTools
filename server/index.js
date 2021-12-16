@@ -1,8 +1,8 @@
 var express = require("express");
-const Mongoose = require("mongoose");
-const user = require("./models/users")
-var cors = require("cors")
+var mongoose = require("mongoose");
+
 var app = express();
+
 const port = 5000;
 app.use(cors())
 app.use(express.json());
