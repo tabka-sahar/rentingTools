@@ -7,22 +7,22 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-   name: string=""
+   username: string=""
 password: string=""
 constructor(private http:HttpClient){
 }
 postData(){
   console.log(name);
   
-  let url = "http://localhost:5000/post"
+  let url = "http://localhost:5000/login"
   this.http.post(url,{
-    name:this.name,
+    username:this.username,
     password:this.password
   }).subscribe((data)=>{console.log(data);
   })
 }
 log(event:any){
-this.name=event
+this.username=event
   
 }
 log1(event:any){
