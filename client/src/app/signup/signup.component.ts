@@ -3,13 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SignupService } from './signupService';
-
-
-@Injectable()
-export class ConfigService {
-  constructor(private http: HttpClient) { }
-}
 
 
 
@@ -19,45 +12,29 @@ export class ConfigService {
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-constructor(private signupService: SignupService) { }
+  constructor(private http: HttpClient) { }
 
   username: string = '';
   fullname: string = '';
   email: string = '';
-  phone_number: number = 0
+  phone_number: number = 0;
   password: string = '';
-  Username(event: any) {
-    this.username=event
-    
-  }
-  Fullname(event: any) {
-    this.username=event
-    
-  }
-  Email(event: any) {
-    this.username=event
-    
-  }
-  Phone_number(event: any) {
-    this.username=event
-    
-  }
-  Password(event: any) {
-    this.username=event
-    
-  }
-  
 
 
+  signup() {
+    console.log( '--------', this.username,this.email)
+    let url = "http://localhost:5000/users/signup"
+    this.http.post(url, {
+      username: this.username,
+      fullname: this.fullname,
+      email: this.email,
+      phone_number: this.phone_number,
+      password: this.password
+    }).subscribe((data) => {
+      console.log(data);
+    })
+  }
 
-
- 
-  // myInsert() {
-  //   this.signupService.insertData().subscribe(
-  //     response => console.log(response),
-  //     err => console.log(err)
-  //   );
-  // }
 }
  
  

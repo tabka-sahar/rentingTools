@@ -1,26 +1,38 @@
-import { SignupService } from './signup/signupService';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NavbareComponent } from './navbare/navbare.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { SignupComponent } from './signup/signup.component';
-import { FormsModule } from '@angular/forms'; 
+
 @NgModule({
   declarations: [
+    LoginComponent,
     AppComponent,
-    SignupComponent,
-    // SignupService,
-  
+    UserProfileComponent,
+    NavbareComponent,
+    UpdateProfileComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', component: LoginComponent },
+      { path: 'user', component: UserProfileComponent },
+      { path: 'user/update', component: UpdateProfileComponent },
+      {path:'users/signup',component: SignupComponent}
+    ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
