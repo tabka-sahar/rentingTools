@@ -3,11 +3,11 @@
 	<div class="signup">
 		<h2 class="form-title" id="Login">Login</h2>
 		<div class="form-holder">
-			<input [ngModel]="username" (ngModelChange)="log($event)" name="username" type="text" class="input" placeholder="Username" required/>
+			<input [ngModel]="email" (ngModelChange)="log($event)" name="email" type="text" class="input" placeholder="Email" required/>
 			<input [ngModel]="password" (ngModelChange)="log1($event)" name="password" type="password" class="input" placeholder="Password" required/>
 		</div>
 		<button type="submit" class="submit-btn" (click)="postData()">Login</button>
-		<a href="#" id="forgot">Forgot password?</a><br>
+		<button id="forgot" (click)="forgot()">Forgot password?</button><br>
 
 	</div>
 	<div class="login slide-up">

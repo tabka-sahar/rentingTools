@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbareComponent } from './navbare/navbare.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     UserProfileComponent,
     NavbareComponent,
     UpdateProfileComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
       { path: '', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
       { path: 'user/update', component: UpdateProfileComponent },
+      {path: 'user/forgot', component: ForgotPasswordComponent}
     ]),
   ],
   providers: [],
