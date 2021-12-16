@@ -3,7 +3,7 @@
 	<div class="signup">
 		<h2 class="form-title" id="Login">Login</h2>
 		<div class="form-holder">
-			<input [ngModel]="name" (ngModelChange)="log($event)" name="name" type="text" class="input" placeholder="Username" required/>
+			<input [ngModel]="username" (ngModelChange)="log($event)" name="username" type="text" class="input" placeholder="Username" required/>
 			<input [ngModel]="password" (ngModelChange)="log1($event)" name="password" type="password" class="input" placeholder="Password" required/>
 		</div>
 		<button type="submit" class="submit-btn" (click)="postData()">Login</button>

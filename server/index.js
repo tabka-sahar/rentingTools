@@ -1,15 +1,17 @@
 var express = require("express");
-const Mongoose = require("mongoose");
-const user = require("./models/users")
-var cors = require("cors")
+var mongoose = require("mongoose");
+var users =require("./routers/users")
 var app = express();
+var cors =require("cors")
 const port = 5000;
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-Mongoose.Promise=global.Promise;
-Mongoose.connect("mongodb://localhost:27017/rentingTools")
+app.use("/users",users)
+
+mongoose.Promise=global.Promise;
+mongoose.connect("mongodb://localhost:27017/rentingTools")
 app.listen(port, function () {
 	console.log(`listening on port http://localhost:${port} !`);
 });
