@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , EventEmitter , Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,5 +13,11 @@ export class UserProfileComponent implements OnInit {
     email: 'khlail@gmail.com',
     adrress: 'ariana cité elghazala',
   };
+
   ngOnInit(): void {}
+  message:string=""
+  recieveMessage($event:any){
+    this.message=$event
+  }
+
 }

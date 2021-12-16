@@ -19,4 +19,8 @@ router.route("/forgot/update")
 .post(UserController.forgotUpdate)
 
 
+router.route("/signup")
+	.post(UserController.create_a_user);
+	
 module.exports = router;
+

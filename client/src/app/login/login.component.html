@@ -7,12 +7,12 @@
 			<input [ngModel]="password" (ngModelChange)="log1($event)" name="password" type="password" class="input" placeholder="Password" required/>
 		</div>
 		<button type="submit" class="submit-btn" (click)="postData()">Login</button>
-		<button id="forgot" (click)="forgot()">Forgot password?</button><br>
+		<h5 id="forgot" (click)="forgot()">Forgot password?</h5><br>
 
 	</div>
 	<div class="login slide-up">
 		<div class="center">
-			<h2 class="form-title" id="Signup">Sign up</h2>
+			<h2 routerLink="/users/signup" class="form-title" id="Signup">Sign up</h2>
 		</div>
 	</div>
 </form>

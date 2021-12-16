@@ -2,6 +2,8 @@ var mongoose = require("mongoose");
 var User = require("../models/users");
 var bcrypt = require("bcrypt");
 const nodemailer=require('nodemailer')
+const jwt = require('jsonwebtoken');
+
 module.exports = {
 	find_all_users: async (req, res) => {
 		try {
@@ -12,29 +14,40 @@ module.exports = {
 		}
 	},
 	create_a_user: async (req, res) => {
-		try {
-			const user = req.body;
-			const password = await bcrypt.hash(user.password, 12);
-			user.password = password;
-			User.create(user);
-			res.send("user added successfully");
-		} catch (err) {
-			res.send(err);
+		try{
+			const {username,fullname,email,phone_number,password}= req.body
+		  const user = new User ({username,
+			fullname,email,
+			 phone_number,email,
+			 password})
+			 if(!username||!fullname||!email||!phone_number||!password)
+			 return res.status(400).json({msg:"Please fill in all fields!"})
+			 const useer = await User.findOne({email})
+			 if(useer)return res.status(400).json({msg:"This email already exists"})
+		  const doc = await user.save()
+		  
+		  res.status(200).send(useer)
 		}
-	},
+		
+		  catch(error){
+			res.status(404).json({message:'error',error:'error'})
+		  }
+		
+		},
 	login_a_user:async (req, res) => {
 		try {
+			console.log(req.body);
 		  let {email, password} = req.body
 		  console.log(email);
 		  let user = await User.findOne({email})
 			console.log(user);
-		  if (user) {
-			throw user
-		  }
+			if (!user) {
+				return res.json({msg:"this user doesn't exist"})
+			}
 		  let isMatch = bcrypt.compareSync(password, user.password);
 		  if (!isMatch) {
-			throw "Wrong password"
-		  }
+			return res.json({msg:"Wrong password"})
+		}
 		  let token = jwt.sign(
 			{
 			  username: user.username,

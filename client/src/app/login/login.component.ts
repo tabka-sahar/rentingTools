@@ -1,4 +1,4 @@
-import { Component,SimpleChanges, OnChanges, OnInit, SimpleChange, Input } from '@angular/core';
+import { Component,SimpleChanges, OnChanges, OnInit, SimpleChange, Input, Output,EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 @Component({
@@ -9,17 +9,20 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent {
    email: string=""
 password: string=""
+error:any=""
 constructor(private http:HttpClient){
 }
+@Output()event = new EventEmitter<string>()
 postData(){
   console.log(this.email);
   
-  let url = "http://localhost:5000/users/forgot/update"
+  let url = "http://localhost:5000/users/login"
   this.http.post(url,{
     email:this.email,
     password:this.password
-  }).subscribe((data)=>{console.log(data);
-  })
+  }).toPromise().then((data:any)=>{if (data.msg==="this user doesn't exist"){alert("this user doesn't exist")}
+if(data.msg==="Wrong password"){alert('Wrong password')}else{this.event.emit(data.msg)};
+})
   
 }
 forgot(){
