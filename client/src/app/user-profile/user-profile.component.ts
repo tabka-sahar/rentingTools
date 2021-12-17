@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , EventEmitter , Output } from '@angular/core';
 
 
 @Component({
@@ -15,6 +15,7 @@ export class UserProfileComponent implements OnInit {
     email: 'khlail@gmail.com',
     adrress: 'ariana cité elghazala',
   };
+
   ngOnInit(): void {}
  
 }
