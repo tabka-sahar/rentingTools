@@ -1,25 +1,47 @@
+import { ToolsComponent } from './tools/tools.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ToolsComponent } from './tools/tools.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NavbareComponent } from './navbare/navbare.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
+    LoginComponent,
     AppComponent,
+    UserProfileComponent,
+    NavbareComponent,
+    UpdateProfileComponent,
+    SignupComponent,
     ToolsComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', component: LoginComponent },
+      { path: 'user', component: UserProfileComponent },
+      { path: 'user/update', component: UpdateProfileComponent },
+      { path:'users/signup',component: SignupComponent},
+      { path:'tools',component: ToolsComponent}
+    ]),
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,31 +1,37 @@
-<div *ngFor="let tool of tools">
-    <div class ="mydiv" *ngIf="tool.verified">
-    <li>
-        {{tool.title}}
-    </li>
-    <li>
-        {{tool.description}}
-    </li>
-    <li>
-        {{tool.price}}
-    </li>
-    <li>
-        {{tool.username}}
-    </li>
+<div class="container" *ngFor="let tool of tools; let index = index">
+    <div class="card" *ngIf="tool.verified">
+        <div class="card__header">
+        <img [src]="tool.pictures" width="600"/>
+    </div>
+    <div class="card__body">
+        <button (click)="availableOrNot(index)" class="tag tag-green" *ngIf="tool.available ; else elseBlock">available</button>
+        <ng-template #elseBlock>
+            <button (click)="availableOrNot(index)" class="tag tag-red">not available</button>
+        </ng-template>
+        
+        <h4>{{tool.title}}</h4>
     
-    <li>
-        {{tool.email}}
-    </li>
-    <li>
-        {{tool.phone_number}}
-    </li>
-        <img [src]="tool.pictures"/>
-       <button class='greenBtn' *ngIf="tool.available ; else elseBlock">available</button>
-    <ng-template #elseBlock>
-        <button class='redBtn'>not available</button>
-    </ng-template>
-        <!-- <li>
-            {{tool.timestampes}}
-        </li> -->
+        <li>{{tool.description}}</li>
+        
+    
+        <li>{{tool.price}} DT</li>
+        
+        
+        <li>Email: {{tool.email}}</li>
+    
+   
+        <li>phone number : {{tool.phone_number}}</li>
+    </div>
+    
+    <div class="card__footer">
+        <div class="user">
+          <img [src]="tool.profile_image_uri" alt="user__image" class="user__image">
+          <div class="user__info">
+            <h5>{{tool.username}}</h5>
+             <!-- <small>{{tool.timestampes}}</small> -->
+             <small>2 days ago</small>
+          </div>
+        </div>
+      </div>
     </div>
 </div>

@@ -9,7 +9,8 @@ export default class Tools {
         public phone_number : String,
         public pictures : String,
         public available : Boolean,
-        public verified : Boolean
+        public verified : Boolean,
+        public profile_image_uri : String
     ) {
 
     }
