@@ -15,31 +15,26 @@ module.exports = {
 	},
 	create_a_user: async (req, res) => {
 		try {
-			const { username, fullname, email, phone_number, password } =
-				req.body;
+			const { username, fullname, email, phone_number, password } = req.body
 			const user = new User({
 				username,
-				fullname,
-				email,
-				phone_number,
-				email,
-				password,
-			});
+				fullname, email,
+				phone_number, email,
+				password
+			})
 			if (!username || !fullname || !email || !phone_number || !password)
-				return res
-					.status(400)
-					.json({ msg: "Please fill in all fields!" });
-			const useer = await User.findOne({ email });
-			if (useer)
-				return res
-					.status(400)
-					.json({ msg: "This email already exists" });
-			const doc = await user.save();
-
-			res.status(200).send(useer);
-		} catch (error) {
-			res.status(404).json({ message: "error", error: "error" });
+				return res.status(400).json({ msg: "Please fill in all fields!" })
+			const useer = await User.findOne({ email })
+			if (useer) return res.status(400).json({ msg: "This email already exists" })
+			const doc = await user.save()
+		  
+			res.status(200).send(useer)
 		}
+		
+		catch (error) {
+			res.status(404).json({ message: 'error', error: 'error' })
+		}
+		
 	},
 	login_a_user: async (req, res) => {
 		try {

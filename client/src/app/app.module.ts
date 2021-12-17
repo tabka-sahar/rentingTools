@@ -11,6 +11,7 @@ import { NavbareComponent } from './navbare/navbare.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
+import { AdminComponent } from './admin/admin.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 
@@ -21,6 +22,8 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     UserProfileComponent,
     NavbareComponent,
     UpdateProfileComponent,
+    SignupComponent,
+    AdminComponent,
     ForgotPasswordComponent,
     SignupComponent
   ],
@@ -29,6 +32,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
