@@ -1,0 +1,31 @@
+<div *ngFor="let tool of tools">
+    <div class ="mydiv" *ngIf="tool.verified">
+    <li>
+        {{tool.title}}
+    </li>
+    <li>
+        {{tool.description}}
+    </li>
+    <li>
+        {{tool.price}}
+    </li>
+    <li>
+        {{tool.username}}
+    </li>
+    
+    <li>
+        {{tool.email}}
+    </li>
+    <li>
+        {{tool.phone_number}}
+    </li>
+        <img [src]="tool.pictures"/>
+       <button class='greenBtn' *ngIf="tool.available ; else elseBlock">available</button>
+    <ng-template #elseBlock>
+        <button class='redBtn'>not available</button>
+    </ng-template>
+        <!-- <li>
+            {{tool.timestampes}}
+        </li> -->
+    </div>
+</div>
