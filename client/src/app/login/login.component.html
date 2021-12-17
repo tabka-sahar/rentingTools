@@ -3,20 +3,16 @@
 	<div class="signup">
 		<h2 class="form-title" id="Login">Login</h2>
 		<div class="form-holder">
-			<input [ngModel]="username" (ngModelChange)="log($event)" name="username" type="text" class="input" placeholder="Username" required/>
+			<input [ngModel]="email" (ngModelChange)="log($event)" name="email" type="text" class="input" placeholder="Email" required/>
 			<input [ngModel]="password" (ngModelChange)="log1($event)" name="password" type="password" class="input" placeholder="Password" required/>
 		</div>
 		<button type="submit" class="submit-btn" (click)="postData()">Login</button>
-		<a href="#" id="forgot">Forgot password?</a><br>
+		<h5 id="forgot" (click)="forgot()">Forgot password?</h5><br>
 
 	</div>
 	<div class="login slide-up">
 		<div class="center">
-<<<<<<< HEAD
-			<!-- <h2 class="form-title" id="Signup">Sign up</h2> -->
-=======
-			<h2 class="form-title" id="Signup">Sign up</h2>
->>>>>>> 26d680f73202d6c88ecc8a69909d229e2e33d3b9
+			<h2 routerLink="/users/signup" class="form-title" id="Signup">Sign up</h2>
 		</div>
 	</div>
 </form>
