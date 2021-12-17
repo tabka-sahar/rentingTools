@@ -15,9 +15,6 @@ export class UserProfileComponent implements OnInit {
   };
 
   ngOnInit(): void {}
-  message:string=""
-  recieveMessage($event:any){
-    this.message=$event
-  }
+ 
 
 }
