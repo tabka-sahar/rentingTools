@@ -9,8 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbareComponent } from './navbare/navbare.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { AdminComponent } from './admin/admin.component';
     NavbareComponent,
     UpdateProfileComponent,
     SignupComponent,
-    AdminComponent
+    AdminComponent,
+    ForgotPasswordComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,7 @@ import { AdminComponent } from './admin/admin.component';
       { path: '', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
       { path: 'user/update', component: UpdateProfileComponent },
+      {path: 'user/forgot', component: ForgotPasswordComponent},
       {path:'users/signup',component: SignupComponent}
     ]),
   ],
