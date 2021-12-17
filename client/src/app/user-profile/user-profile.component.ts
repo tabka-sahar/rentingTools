@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class UserProfileComponent implements OnInit {
   constructor() {}
   user = {
-    username: 'khalil hamzaoui',
+    fullname: 'khalil hamzaoui',
+    username: '@khalil_HZ',
     phone_number: 25485966,
     email: 'khlail@gmail.com',
     adrress: 'ariana cité elghazala',
   };
   ngOnInit(): void {}
+ 
 }
