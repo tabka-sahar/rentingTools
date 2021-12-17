@@ -1,28 +1,41 @@
-import { Component,SimpleChanges, OnChanges, OnInit, SimpleChange, Input } from '@angular/core';
+import { Component,SimpleChanges, OnChanges, OnInit, SimpleChange, Input, Output,EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-   username: string=""
+   email: string=""
 password: string=""
+error:any=""
 constructor(private http:HttpClient){
 }
+@Output()event = new EventEmitter<string>()
 postData(){
-  console.log(name);
+  console.log(this.email);
   
   let url = "http://localhost:5000/users/login"
   this.http.post(url,{
-    username:this.username,
+    email:this.email,
     password:this.password
-  }).subscribe((data)=>{console.log(data);
-  })
+  }).toPromise().then((data:any)=>{if (data.msg==="this user doesn't exist"){alert("this user doesn't exist")}
+if(data.msg==="Wrong password"){alert('Wrong password')}else{this.event.emit(data.msg)};
+})
+  
+}
+forgot(){
+  
+  let url = "http://localhost:5000/users/f"
+  this.http.post(url,{
+    email:this.email
+      }).subscribe( ()=>{  console.log("hi")}   )
+
 }
 log(event:any){
-this.username=event
+this.email=event
   
 }
 log1(event:any){

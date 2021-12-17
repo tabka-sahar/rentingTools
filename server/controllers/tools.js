@@ -5,7 +5,7 @@ var bcrypt = require("bcrypt");
 module.exports = {
 	find_all_tools: async (req, res) => {
 		try {
-			const tools = await tool.find().select("");
+			const tools = await Tools.find().select("");
 			res.send(tools);
 		} catch (err) {
 			res.send(err);

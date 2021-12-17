@@ -17,7 +17,7 @@ export class SignupComponent {
   username: string = '';
   fullname: string = '';
   email: string = '';
-  phone_number: number = 0;
+  phone_number: string = '';
   password: string = '';
 
 

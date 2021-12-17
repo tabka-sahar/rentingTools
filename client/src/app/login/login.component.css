@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
-
-
-
-
 .form-structor {
   background-color: #222;
   border-radius: 15px;
@@ -13,7 +9,7 @@
   overflow: hidden;
   left: 40%;
 }
-#forgot{color: rgb(71, 66, 66);}
+#forgot{color: rgb(71, 66, 66);text-decoration:underline;}
 .form-structor::after {
   content: '';
   opacity: .8;
@@ -106,10 +102,7 @@
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
   background-color: rgba(0, 0, 0, 0.8);
-
-} 
-
-
+}
 
 .form-structor .login {
   position: absolute;
