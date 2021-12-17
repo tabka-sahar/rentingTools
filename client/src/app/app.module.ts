@@ -1,3 +1,4 @@
+import { ToolsComponent } from './tools/tools.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -23,13 +24,18 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     NavbareComponent,
     UpdateProfileComponent,
     SignupComponent,
+    ToolsComponent,
     AdminComponent,
-    ForgotPasswordComponent,
-    SignupComponent
+    ForgotPasswordComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    HttpClientModule,
+    FormsModule,
+
     FormsModule,
     HttpClientModule,
     
@@ -37,9 +43,12 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
       { path: '', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
       { path: 'user/update', component: UpdateProfileComponent },
-      {path: 'user/forgot', component: ForgotPasswordComponent},
-      {path:'users/signup',component: SignupComponent}
+      { path:'users/signup',component: SignupComponent},
+      { path:'tools',component: ToolsComponent},
+      {path: 'user/forgot', component: ForgotPasswordComponent}
+
     ]),
+
   ],
   providers: [],
   bootstrap: [AppComponent],
