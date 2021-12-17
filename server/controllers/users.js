@@ -72,7 +72,9 @@ module.exports = {
 	},
 	find_a_user_and_update: async (req, res) => {
 		let id = req.params.userId;
-		let user = req.boby;
+		let user = req.body;
+		console.log("=====>", id);
+		console.log("=====>", user);
 		User.findByIdAndUpdate(id, user)
 			.then(() => res.send(`${user.fullname} infos are up to date`))
 			.catch((error) => res.send(error));
