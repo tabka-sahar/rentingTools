@@ -104,6 +104,9 @@
   transition: all .3s ease;
   background-color: rgba(0, 0, 0, 0.8);
 }
+#pay{position: relative;
+  margin-top: 20%;
+left: 80%;}
 
 /* .form-structor .login {
   position: absolute;

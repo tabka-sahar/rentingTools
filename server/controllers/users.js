@@ -59,20 +59,7 @@ module.exports = {
 			{
 			  expiresIn: "1h"
 			})
-			let isMatch = bcrypt.compareSync(password, user.password);
-			if (!isMatch) {
-				throw "Wrong password";
-			}
-			let token = jwt.sign(
-				{
-					username: user.username,
-					_id: user._id,
-				},
-				"jwtSecret",
-				{
-					expiresIn: "1h",
-				}
-			);
+			
 			res.send({
 				user,
 				token: token,

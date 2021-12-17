@@ -11,6 +11,9 @@
         
         <input [(ngModel)]="password" name = "password" type="password" value="FakePSW"  class="input" placeholder="password" required />
       </div>
+      <div class="col-md-5 mb-2">
+        <button (click)="makePayment(15)" id="pay" class="btn btn-danger btn-block">Pay $15</button>
+      </div>
       <button type="submit" class="submit-btn" (click)="signup()">Signup</button>
     </div>
   </form>

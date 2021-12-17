@@ -12,8 +12,8 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireStorageModule } from 'angularfire2/storage';
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFireStorageModule } from 'angularfire2/storage'
 
 @NgModule({
   declarations: [
