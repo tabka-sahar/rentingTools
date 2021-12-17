@@ -27,6 +27,7 @@ import { AdminComponent } from './admin/admin.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
