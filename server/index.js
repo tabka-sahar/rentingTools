@@ -1,7 +1,9 @@
 var express = require("express");
 var mongoose = require("mongoose");
-var users = require("./routers/users")
-var admin = require("./routers/admin")
+var users = require("./routers/users");
+var admin = require("./routers/admin");
+var tools = require("./routers/tools");
+
 var app = express();
 var cors = require("cors");
 const port = 5000;
@@ -10,8 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/users", users)
-app.use("/admin",admin)
+app.use("/users", users);
+app.use("/admin", admin);
+app.use("/tools", tools);
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/rentingTools");
