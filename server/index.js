@@ -11,7 +11,7 @@ const session = require('express-session');
 var cors = require("cors");
 const port = 5000;
 
-app.use(cors());
+app.use(cors({origin:['http://localhost:5000/sucess'],credentials:true}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -29,12 +29,19 @@ var userProfile;
 
 app.use(passport.initialize());
 
-
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Methods", "GET , PUT , POST , DELETE");
+//   res.header("Access-Control-Allow-Headers", "Content-Type, x-requested-with");
+//   next(); // Important
+// })
 app.get('/google',passport.authenticate('google', { scope : ['profile', 'email'] }))
 
-app.get('/sucess', (req, res) => {
-  //res.redirect('/');
-console.log(req.user);})
+app.get('/sucess', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
+  
+console.log('hhhhhhhh');
+  res.redirect('http://localhost:4200');
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -51,16 +58,16 @@ passport.deserializeUser((user, done) => {
 passport.use(new GoogleStrategy({
     clientID: '1032421990118-qmdf404tpdr25pc22kooarn5aqpfuldd.apps.googleusercontent.com',
     clientSecret: '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',
-    callbackURL: "http://localhost:4200/sucess"
-  },
+    callbackURL: "http://localhost:4200/sucess"},
   function(accessToken, refreshToken, profile, cb) {
     // Register user here.
+
     console.log(profile);
 	cb(null, profile);
 
 }
 ));
-app.get('http:localhost:5000/end',(req,res)=>{res.end("hi")})
+app.get('http:localhost:5000/google/callback',(req,res)=>{res.end("hi")})
 app.use("/users", users)
 app.use("/admin",admin)
 
