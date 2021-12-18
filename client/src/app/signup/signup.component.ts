@@ -69,12 +69,15 @@ export class SignupComponent {
           }
         });
       }
+     
         
       window.document.body.appendChild(script);
     }
   }
-
-
+  login(){
+        var url= "http://localhost:5000/google"
+    this.http.get(url).subscribe( ()=>{  console.log("hi")}   )
+      }
 }
  
  

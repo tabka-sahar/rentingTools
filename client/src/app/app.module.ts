@@ -12,6 +12,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
+import { GoogleComponent } from './google/google.component';
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireStorageModule } from 'angularfire2/storage'
 
@@ -25,7 +26,8 @@ import { AdminComponent } from './admin/admin.component';
     SignupComponent,
     AdminComponent,
     ForgotPasswordComponent,
-    SignupComponent
+    SignupComponent,
+    GoogleComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,9 @@ import { AdminComponent } from './admin/admin.component';
       { path: 'user', component: UserProfileComponent },
       { path: 'user/update', component: UpdateProfileComponent },
       {path: 'user/forgot', component: ForgotPasswordComponent},
-      {path:'users/signup',component: SignupComponent}
+      {path:'users/signup',component: SignupComponent},
+            {path:'sucess',component: GoogleComponent}
+
     ]),
   ],
   providers: [],
