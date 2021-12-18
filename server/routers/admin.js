@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const AdminController = require("../controllers/admin");
 
-router
-	.route("/")
+
+router.route("/admin")
 	.get(AdminController.find_all_tools)
 	
 

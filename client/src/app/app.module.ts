@@ -11,9 +11,9 @@ import { NavbareComponent } from './navbare/navbare.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
-import { AdminComponent } from './admin/admin.component';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireStorageModule } from 'angularfire2/storage';
+import { ListToolComponent } from './admin/admin_tools_list.component'
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     NavbareComponent,
     UpdateProfileComponent,
     SignupComponent,
-    AdminComponent,
+    ListToolComponent,
     ForgotPasswordComponent,
     SignupComponent
   ],
@@ -32,6 +32,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    
     
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
