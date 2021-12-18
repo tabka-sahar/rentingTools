@@ -4,14 +4,12 @@ import { Observable } from 'rxjs';
 import Tools from '../Models/tool';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TollsService {
-
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {}
 
   getTolls(): Observable<Tools[]> {
-    return this.http.get<Tools[]>("http://localhost:4200/tools")
+    return this.http.get<Tools[]>('http://localhost:5000/tools');
   }
 }
