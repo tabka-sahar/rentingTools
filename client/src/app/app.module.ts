@@ -1,4 +1,4 @@
-import { ToolsComponent } from './tools/tools.component';
+import { ToolsComponent} from './tools/tools.component';
 import { NgModule, ViewChild, AfterViewInit, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +11,10 @@ import { NavbareComponent } from './navbare/navbare.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminFeedComponent } from './admin-feed/admin-feed.component';
+import { GoogleComponent } from './google/google.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { FooterComponent } from './footer/footer.component';
 import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
 import { HomePageComponent } from './home-page/home-page.component';
 // import { AngularFireModule } from 'angularfire2';
@@ -26,9 +29,12 @@ import { HomePageComponent } from './home-page/home-page.component';
     UpdateProfileComponent,
     SignupComponent,
     ToolsComponent,
-    AdminComponent,
     ForgotPasswordComponent,
     SignupComponent,
+    AdminFeedComponent,
+    GoogleComponent,
+    LoginAdminComponent,
+    FooterComponent,
     ToolDetailesComponent,
     HomePageComponent,
   ],
