@@ -9,13 +9,15 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AdminComponent } from './admin/admin.component';
 import { ToolsComponent } from './tools/tools.component';
 import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [];
 
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: '', component: LoginComponent },
+      { path: '', component: HomePageComponent },
+      { path: 'user/login', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
       { path: 'user/update', component: UpdateProfileComponent },
       { path: 'users/signup', component: SignupComponent },

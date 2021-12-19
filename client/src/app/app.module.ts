@@ -13,6 +13,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
+import { HomePageComponent } from './home-page/home-page.component';
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireStorageModule } from 'angularfire2/storage';
 
@@ -29,6 +30,7 @@ import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
     ForgotPasswordComponent,
     SignupComponent,
     ToolDetailesComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
