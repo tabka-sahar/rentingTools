@@ -1,24 +1,32 @@
 <div class="toolsCardsContainer">
-  <div class="container" *ngFor="let tool of tools; let index = index">
+  <div
+    class="container"
+    *ngFor="let tool of tools; let index = index"
+    (click)="onSelect(tool)"
+    routerLink="/tools/slectedTool"
+  >
     <div class="card" *ngIf="tool.user.verified">
       <div class="card__header">
         <img [src]="tool.pictures[0]" width="600" />
       </div>
       <div class="card__body">
-        <button
+        <!-- <button
           (click)="availableOrNot(index)"
           class="tag tag-green"
           *ngIf="tool.available; else elseBlock"
         >
           available
-        </button>
-        <ng-template #elseBlock>
+        </button> -->
+        <!-- <ng-template #elseBlock>
           <button (click)="availableOrNot(index)" class="tag tag-red">
             not available
           </button>
-        </ng-template>
-        <h4>{{ tool.title }}</h4>
-        <li>{{ tool.description }}</li>
+        </ng-template> -->
+        <div>
+          <h4>{{ tool.title }}</h4>
+          <span>{{ tool.categorie }}</span>
+        </div>
+        <!-- <li>{{ tool.description }}</li> -->
         <li>{{ tool.price }}</li>
         <small>{{ tool.createdAt }}</small>
       </div>

@@ -8,6 +8,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AdminComponent } from './admin/admin.component';
 import { ToolsComponent } from './tools/tools.component';
+import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
 
 const routes: Routes = [];
 
@@ -20,6 +21,7 @@ const routes: Routes = [];
       { path: 'users/signup', component: SignupComponent },
       { path: 'tools', component: ToolsComponent },
       { path: 'user/forgot', component: ForgotPasswordComponent },
+      { path: 'tools/slectedTool', component: ToolDetailesComponent },
     ]),
   ],
   exports: [RouterModule],
