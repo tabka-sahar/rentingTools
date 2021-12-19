@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -17,9 +15,13 @@ export class SignupComponent {
   username: string = '';
   fullname: string = '';
   email: string = '';
-  phone_number: number = 0;
+  phone_number: string = '';
   password: string = '';
-
+  adrress: string ="";
+  paymentHandler:any = null;
+  ngOnInit() {
+    this.invokeStripe();
+  }
 
   signup() {
     console.log( '--------', this.username,this.email)
@@ -29,12 +31,55 @@ export class SignupComponent {
       fullname: this.fullname,
       email: this.email,
       phone_number: this.phone_number,
-      password: this.password
+      password: this.password,
+      adrress:this.adrress
     }).subscribe((data) => {
       console.log(data);
     })
   }
 
+  makePayment(amount:any) {
+    const paymentHandler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_51K5AeAI8HBYKtbzFQjaXDSmaCOcULlIcKAqn8hsX2xe12CgeoXY8C4GpTbkDY2ZaU4rLAfWplKjP2dMpk4xXGGQv00NLMjIBbM',
+      locale: 'auto',
+      token: function (stripeToken: any) {
+        console.log(stripeToken)
+        alert('Stripe token generated!');
+      }
+    });
+  
+    paymentHandler.open({
+      name: 'Positronx',
+      description: '3 widgets',
+      amount: amount * 100
+    });
+  }
+  
+  invokeStripe() {
+    if(!window.document.getElementById('stripe-script')) {
+      const script = window.document.createElement("script");
+      script.id = "stripe-script";
+      script.type = "text/javascript";
+      script.src = "https://checkout.stripe.com/checkout.js";
+      script.onload = () => {
+        this.paymentHandler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_51K5AeAI8HBYKtbzFQjaXDSmaCOcULlIcKAqn8hsX2xe12CgeoXY8C4GpTbkDY2ZaU4rLAfWplKjP2dMpk4xXGGQv00NLMjIBbM',
+          locale: 'auto',
+          token: function (stripeToken: any) {
+            console.log(stripeToken)
+            alert('Payment has been successfull!');
+          }
+        });
+      }
+     
+        
+      window.document.body.appendChild(script);
+    }
+  }
+  // login(){
+  //       var url= "http://localhost:5000/google"
+  //   this.http.get(url).subscribe( ()=>{  console.log("hi")}   )
+  //     }
 }
  
  
