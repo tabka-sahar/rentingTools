@@ -17,6 +17,7 @@ export class SignupComponent {
   email: string = '';
   phone_number: string = '';
   password: string = '';
+  adrress: string ="";
   paymentHandler:any = null;
   ngOnInit() {
     this.invokeStripe();
@@ -30,7 +31,8 @@ export class SignupComponent {
       fullname: this.fullname,
       email: this.email,
       phone_number: this.phone_number,
-      password: this.password
+      password: this.password,
+      adrress:this.adrress
     }).subscribe((data) => {
       console.log(data);
     })

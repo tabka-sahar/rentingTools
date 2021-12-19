@@ -2,21 +2,21 @@ import { Component,SimpleChanges, OnChanges, OnInit, SimpleChange, Input, Output
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { PassingDataService } from '../passing-data.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+
    email: string=""
 password: string=""
 error:any=""
-userdata:any=""
-constructor(private http:HttpClient, private passData:PassingDataService){
+state:object= {};
+constructor(private http:HttpClient, private router:Router){
 }
 ngOnInit(): void {
-    this.passData.communicateMessage(this.userdata)
 }
 postData(){
   console.log(this.email);
@@ -25,10 +25,12 @@ postData(){
   this.http.post(url,{
     email:this.email,
     password:this.password
-  }).toPromise().then((data:any)=>{ if (data.msg==="this user doesn't exist"){alert("this user doesn't exist")}
-if(data.msg==="Wrong password"){alert('Wrong password')}else{this.userdata=data};
-})
-  
+  }).toPromise().then((data:any)=>{ if (data.msg==="this user doesn't exist"){this.error="this user doesn't exist"}
+else if(data.msg==="Wrong password"){this.error='Wrong password'}else{this.state={fullname:data.user.fullname,email:data.user.email,phonenumber:data.user.phone_number,adrress:data.user.adrress}
+console.log(this.state);
+
+ this.router.navigate(['/user'],{state:this.state})}})
+
 }
 forgot(){
   

@@ -16,14 +16,15 @@
         <input [(ngModel)]="username" name = "username"type="text" class="input" placeholder="username" required/>
         <input [(ngModel)]="fullname" name = "fullname" type="text" class="input" placeholder="fullname" required/>
         <input [(ngModel)]="email" name = "email" type="text"  class="input" placeholder="email" required />
-        <input [(ngModel)]="phone_number"  name = "phone_number" type="number" class="input" placeholder="phone_number" />
-        
+        <input [(ngModel)]="phone_number"  name = "phone_number" type="number" class="input" placeholder="phone number" />
+        <input [(ngModel)]="adrress" name = "adrress" type="text"   class="input" placeholder="adress" required />
+
         <input [(ngModel)]="password" name = "password" type="password" value="FakePSW"  class="input" placeholder="password" required />
       </div>
       <div class="col-md-5 mb-2">
         <button (click)="makePayment(15)" id="pay" class="btn btn-danger btn-block">Pay $15</button>
       </div>
-      <button type="submit" class="submit-btn" (click)="signup()">Signup</button>
+      <button type="submit" routerLink="/" class="submit-btn" (click)="signup()" >Signup</button>
     </div>
   </form>
     

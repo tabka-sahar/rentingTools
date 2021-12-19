@@ -1,6 +1,6 @@
 import { Component, OnInit , EventEmitter , Output } from '@angular/core';
 import { PassingDataService } from '../passing-data.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,21 +8,22 @@ import { PassingDataService } from '../passing-data.service';
   styleUrls: ['./user-profile.component.css'],
 })
 export class UserProfileComponent implements OnInit {
-  constructor( private passData:PassingDataService) {}
-  user = {
-    fullname: '',
-    username: '@khalil_HZ',
-    phone_number: 25485966,
-    email: 'khlail@gmail.com',
-    adrress: 'ariana cité elghazala',
-  };
-
-  ngOnInit(): void {
-    this.passData.sendMessage.subscribe((message:any)=>{
-this.user.fullname=message.fullname
-console.log(this.user.fullname);
-
-    })
+  constructor( private passData:PassingDataService, private router:Router) {
+    this.state = this.router.getCurrentNavigation()?.extras.state
+    console.log(this.state);
+    this.fullname=this.state.fullname
+    this.email=this.state.email
+    this.phonenumber=this.state.phonenumber
+    this.adrress=this.state.adrress
+    
   }
+  state:any={}
+  fullname:any=""
+  username:any=""
+  phonenumber:any=""
+  email:any=""
+  adrress:any="" 
+  
+  ngOnInit(): void {
+  }}
  
-}
