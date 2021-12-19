@@ -12,6 +12,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
+import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireStorageModule } from 'angularfire2/storage';
 
@@ -27,6 +28,7 @@ import { AdminComponent } from './admin/admin.component';
     AdminComponent,
     ForgotPasswordComponent,
     SignupComponent,
+    ToolDetailesComponent,
   ],
   imports: [
     BrowserModule,
