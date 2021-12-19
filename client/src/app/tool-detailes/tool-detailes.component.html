@@ -1,0 +1,43 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<div id="container">
+  <div class="product-details">
+    <h1>{{ selectedTool.title }}</h1>
+
+    <div class="information">
+      <ul>
+        <li><strong>Categorie : </strong>{{ selectedTool.categorie }}</li>
+        <li><strong>Price : </strong>{{ selectedTool.price }}</li>
+        <li><strong>Owner: </strong>{{ selectedTool.user.fullname }}</li>
+        <li>
+          <strong>Contact: </strong><br />
+          <span>Mobile {{ selectedTool.user.phone_number }}</span
+          ><br />
+          <span>Email {{ selectedTool.user.email }}</span
+          ><br />
+          <span>Adrress {{ selectedTool.user.adrress }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="control">
+      <button class="btn">
+        <!-- <span class="price">$250</span> -->
+        <span class="shopping-cart"
+          ><i class="fa fa-shopping-cart" aria-hidden="true"></i
+        ></span>
+        <span class="buy" routerLink="/tools">Go back</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="product-image">
+    <img src="{{ selectedTool.pictures }}" alt="" />
+    <div class="info">
+      <h2>Description</h2>
+      <p>{{ selectedTool.description }}</p>
+    </div>
+  </div>
+</div>

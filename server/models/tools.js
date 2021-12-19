@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const tools = mongoose.Schema(
 	{
+		
 		title: String,
 		description: String,
 		price: String,
@@ -13,10 +14,7 @@ const tools = mongoose.Schema(
 			ref: "User",
 		},
 	},
-	{
-		timestampes: true,
-	},
-	{ versionKey: false }
+	{ timestamps: true, versionKey: false }
 );
 
 module.exports = mongoose.model("Tools", tools);

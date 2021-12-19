@@ -1,5 +1,14 @@
-
-  <div class="form-structor">
+<!-- <h1> Google Login </h1>
+  Click here to authenticate with Google
+  <div class="container1">
+    <div class="jumbotron text-center text-primary">
+        <h1><span class="fa fa-lock"></span> Social Authentication</h1>
+        <p>Login or Register with:</p>
+        <a href="http://localhost:5000/google"  class="btn btn-danger"><span class="fa fa-google"></span> SignIn with Google</a>
+    </div>
+</div>  -->
+ <div class="form-structor">
+    
     <form>
     <div class="signup">
       <h2 class="form-title" id="signup"><span></span>Sign up</h2>
@@ -7,11 +16,15 @@
         <input [(ngModel)]="username" name = "username"type="text" class="input" placeholder="username" required/>
         <input [(ngModel)]="fullname" name = "fullname" type="text" class="input" placeholder="fullname" required/>
         <input [(ngModel)]="email" name = "email" type="text"  class="input" placeholder="email" required />
-        <input [(ngModel)]="phone_number"  name = "phone_number" type="number" class="input" placeholder="phone_number" />
-        
+        <input [(ngModel)]="phone_number"  name = "phone_number" type="number" class="input" placeholder="phone number" />
+        <input [(ngModel)]="adrress" name = "adrress" type="text"   class="input" placeholder="adress" required />
+
         <input [(ngModel)]="password" name = "password" type="password" value="FakePSW"  class="input" placeholder="password" required />
       </div>
-      <button type="submit" class="submit-btn" (click)="signup()">Signup</button>
+      <div class="col-md-5 mb-2">
+        <button (click)="makePayment(15)" id="pay" class="btn btn-danger btn-block">Pay $15</button>
+      </div>
+      <button type="submit" routerLink="/" class="submit-btn" (click)="signup()" >Signup</button>
     </div>
   </form>
     
