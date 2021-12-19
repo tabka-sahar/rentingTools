@@ -7,8 +7,9 @@ router
 	.get(AdminController.find_all_tools)
 	
 
-router.route("/admin")
-.delete(AdminController.delete_tool);
+router.route("/login")
+.delete(AdminController.delete_tool)
+.post(AdminController.login_an_admin);
 
 
 module.exports = router;
