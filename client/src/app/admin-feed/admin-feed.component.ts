@@ -47,7 +47,7 @@ export class AdminFeedComponent implements OnInit {
     console.log(_id);
     return this.http.delete(url).subscribe(() => {
       this.ngOnInit();
-      console.log('selected tool deleted');
+      console.log('selected tool deleted successfully');
     });
   }
 }
