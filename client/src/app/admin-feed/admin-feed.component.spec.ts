@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+<<<<<<< HEAD:client/src/app/admin-feed/admin-feed.component.spec.ts
 import { AdminFeedComponent } from './admin-feed.component';
+=======
+import { AdminComponent } from './adminTools_List.component';
+>>>>>>> bf7da2b (delete posts):client/src/app/admin/admin.component.spec.ts
 
 describe('AdminFeedComponent', () => {
   let component: AdminFeedComponent;
