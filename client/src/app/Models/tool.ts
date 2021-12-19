@@ -2,6 +2,7 @@ import * as moment from 'moment';
 
 export default class Tools {
   constructor(
+    public _id :string,
     public title: String,
     public description: String,
     public price: Number,

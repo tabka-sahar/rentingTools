@@ -7,7 +7,7 @@ router.route("/admin")
 	.get(AdminController.find_all_tools)
 	
 
-router.route("/admin")
+router.route("/feed/:_id")
 .delete(AdminController.delete_tool);
 
 
