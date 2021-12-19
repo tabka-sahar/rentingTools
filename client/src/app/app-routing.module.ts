@@ -9,7 +9,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AdminComponent } from './admin/admin.component';
 import { ToolsComponent } from './tools/tools.component';
 import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
-
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 const routes: Routes = [];
 
 @NgModule({
@@ -22,6 +22,7 @@ const routes: Routes = [];
       { path: 'tools', component: ToolsComponent },
       { path: 'user/forgot', component: ForgotPasswordComponent },
       { path: 'tools/slectedTool', component: ToolDetailesComponent },
+      {path:'admin', component: LoginAdminComponent}
     ]),
   ],
   exports: [RouterModule],
