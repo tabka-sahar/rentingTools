@@ -15,30 +15,24 @@ module.exports = {
 	},
 	create_a_user: async (req, res) => {
 		try {
-			const { username, fullname, email, phone_number, password } =
-				req.body;
+			const { username, fullname, email, phone_number, password, adrress } = req.body
 			const user = new User({
 				username,
-				fullname,
-				email,
-				phone_number,
-				email,
-				password,
-			});
-			if (!username || !fullname || !email || !phone_number || !password)
-				return res
-					.status(400)
-					.json({ msg: "Please fill in all fields!" });
-			const useer = await User.findOne({ email });
-			if (useer)
-				return res
-					.status(400)
-					.json({ msg: "This email already exists" });
-			const doc = await user.save();
-
-			res.status(200).send(useer);
-		} catch (error) {
-			res.status(404).json({ message: "error", error: "error" });
+				fullname, email,
+				phone_number, adrress,
+				password
+			})
+			if (!username || !fullname || !email || !phone_number || !password || !adrress)
+				return res.status(400).json({ msg: "Please fill in all fields!" })
+			const useer = await User.findOne({ email })
+			if (useer) return res.status(400).json({ msg: "This email already exists" })
+			const doc = await user.save()
+		  
+			res.status(200).send(useer)
+		}
+		
+		catch (error) {
+			res.status(404).json({ message: 'error', error: 'error' })
 		}
 	},
 	login_a_user: async (req, res) => {
@@ -51,21 +45,20 @@ module.exports = {
 			if (!user) {
 				return res.json({ msg: "this user doesn't exist" });
 			}
-			let isMatch = bcrypt.compareSync(password, user.password);
-			if (!isMatch) {
-				return res.json({ msg: "Wrong password" });
-			}
-			let token = jwt.sign(
-				{
-					username: user.username,
-					_id: user._id,
-				},
-				"jwtSecret",
-				{
-					expiresIn: "1h",
-				}
-			);
-
+		  let isMatch = bcrypt.compareSync(password, user.password);
+		  if (!isMatch) {
+			return res.json({msg:"Wrong password"})
+		}
+		  let token = jwt.sign(
+			{
+			  username: user.username,
+			  _id: user._id
+			},
+			"jwtSecret",
+			{
+			  expiresIn: "1h"
+			})
+			
 			res.send({
 				user,
 				token: token,

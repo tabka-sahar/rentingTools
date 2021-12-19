@@ -1,11 +1,9 @@
-import * as moment from 'moment';
-
 export default class Tools {
   constructor(
     public _id :string,
     public title: String,
     public description: String,
-    public price: Number,
+    public price: String,
     public categorie: String,
     public available: Boolean,
     public pictures: String,
@@ -13,6 +11,7 @@ export default class Tools {
     public user: {
       username: String;
       fullname: String;
+      adrress: String;
       connected: false;
       email: String;
       phone_number: String;

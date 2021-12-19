@@ -10,6 +10,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ToolsComponent } from './tools/tools.component';
 import {AdminFeedComponent} from './admin-feed/admin-feed.component'
 
+import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 const routes: Routes = [];
 
 @NgModule({
@@ -21,7 +23,9 @@ const routes: Routes = [];
       { path: 'users/signup', component: SignupComponent },
       { path: 'tools', component: ToolsComponent },
       { path: 'user/forgot', component: ForgotPasswordComponent },
-      {path:'admin/feed',component:AdminFeedComponent}
+      {path:'admin/feed',component:AdminFeedComponent},
+      { path: 'tools/slectedTool', component: ToolDetailesComponent },
+      {path:'admin', component: LoginAdminComponent}
     ]),
   ],
   exports: [RouterModule],
