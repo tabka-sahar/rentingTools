@@ -4,8 +4,8 @@
 		"client-install": "cd ../client && npm install",
 		"server-install": "npm install",
 		"install-all-deps": "concurrently \"npm run server-install\" \"npm run client-install\"",
-		"run-server": "nodemon index.js",
-		"server-dev": "nodemon index.js"
+		"server-dev": "nodemon index.js",
+		"worker": "node worker.js"
 	},
 	"dependencies": {
 		"bcrypt": "^5.0.1",

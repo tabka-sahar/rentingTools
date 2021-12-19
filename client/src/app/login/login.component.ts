@@ -1,4 +1,13 @@
-import { Component,SimpleChanges, OnChanges, OnInit, SimpleChange, Input, Output,EventEmitter } from '@angular/core';
+import {
+  Component,
+  SimpleChanges,
+  OnChanges,
+  OnInit,
+  SimpleChange,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { PassingDataService } from '../passing-data.service';

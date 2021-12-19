@@ -1,0 +1,49 @@
+<div class="toolsCardsContainer">
+  <div
+    class="container"
+    *ngFor="let tool of tools; let index = index"
+    (click)="onSelect(tool)"
+    routerLink="/tools/slectedTool"
+  >
+    <div class="card" *ngIf="tool.user.verified">
+      <div class="card__header">
+        <img [src]="tool.pictures[0]" width="600" />
+      </div>
+      <div class="card__body">
+        <!-- <button
+          (click)="availableOrNot(index)"
+          class="tag tag-green"
+          *ngIf="tool.available; else elseBlock"
+        >
+          available
+        </button> -->
+        <!-- <ng-template #elseBlock>
+          <button (click)="availableOrNot(index)" class="tag tag-red">
+            not available
+          </button>
+        </ng-template> -->
+        <div>
+          <h4>{{ tool.title }}</h4>
+          <span>{{ tool.categorie }}</span>
+        </div>
+        <!-- <li>{{ tool.description }}</li> -->
+        <li>{{ tool.price }}</li>
+        <small>{{ tool.createdAt }}</small>
+      </div>
+      <div class="card__footer">
+        <div class="user">
+          <img
+            [src]="tool.user.profile_image_uri"
+            alt="user__image"
+            class="user__image"
+          />
+          <div class="user__info">
+            <h5>{{ tool.user.username }}</h5>
+            <p><span>Mobile</span> (216) {{ tool.user.phone_number }}</p>
+            <p><span>Email</span> {{ tool.user.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
