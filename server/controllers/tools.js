@@ -1,6 +1,5 @@
 var mongoose = require("mongoose");
 var Tools = require("../models/tools");
-var bcrypt = require("bcrypt");
 
 module.exports = {
 	find_all_tools: async (req, res) => {
@@ -16,6 +15,15 @@ module.exports = {
 			const tool = req.boby;
 			Tools.create(tool);
 			res.send("tool added");
+		} catch (err) {
+			res.send(err);
+		}
+	},
+	find_use_tools: async (req, res) => {
+		try {
+			let id = req.params.id;
+			const tools = await Tools.find({ user: id }).select("");
+			res.send(tools);
 		} catch (err) {
 			res.send(err);
 		}
