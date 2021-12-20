@@ -3,12 +3,12 @@ var User = require("../models/users");
 var bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
-const Vonage = require('@vonage/server-sdk')
+const Vonage = require("@vonage/server-sdk");
 
 const vonage = new Vonage({
-  apiKey: "a86d206e",
-  apiSecret: "lAwbmiomkOKiH2bJ"
-})
+	apiKey: "a86d206e",
+	apiSecret: "lAwbmiomkOKiH2bJ",
+});
 
 module.exports = {
 	find_all_users: async (req, res) => {
@@ -21,24 +21,43 @@ module.exports = {
 	},
 	create_a_user: async (req, res) => {
 		try {
-			const { username, fullname, email, phone_number, password, adrress } = req.body
+			const {
+				username,
+				fullname,
+				email,
+				phone_number,
+				password,
+				adrress,
+			} = req.body;
 			const user = new User({
 				username,
-				fullname, email,
-				phone_number, adrress,
-				password
-			})
-			if (!username || !fullname || !email || !phone_number || !password || !adrress)
-				return res.status(400).json({ msg: "Please fill in all fields!" })
-			const useer = await User.findOne({ email })
-			if (useer) return res.status(400).json({ msg: "This email already exists" })
-			const doc = await user.save()
-		  
-			res.status(200).send(useer)
-		}
-		
-		catch (error) {
-			res.status(404).json({ message: 'error', error: 'error' })
+				fullname,
+				email,
+				phone_number,
+				adrress,
+				password,
+			});
+			if (
+				!username ||
+				!fullname ||
+				!email ||
+				!phone_number ||
+				!password ||
+				!adrress
+			)
+				return res
+					.status(400)
+					.json({ msg: "Please fill in all fields!" });
+			const useer = await User.findOne({ email });
+			if (useer)
+				return res
+					.status(400)
+					.json({ msg: "This email already exists" });
+			const doc = await user.save();
+
+			res.status(200).send(useer);
+		} catch (error) {
+			res.status(404).json({ message: "error", error: "error" });
 		}
 	},
 	login_a_user: async (req, res) => {
@@ -51,20 +70,21 @@ module.exports = {
 			if (!user) {
 				return res.json({ msg: "this user doesn't exist" });
 			}
-		  let isMatch = bcrypt.compareSync(password, user.password);
-		  if (!isMatch) {
-			return res.json({msg:"Wrong password"})
-		}
-		  let token = jwt.sign(
-			{
-			  username: user.username,
-			  _id: user._id
-			},
-			"jwtSecret",
-			{
-			  expiresIn: "1h"
-			})
-			
+			let isMatch = bcrypt.compareSync(password, user.password);
+			if (!isMatch) {
+				return res.json({ msg: "Wrong password" });
+			}
+			let token = jwt.sign(
+				{
+					username: user.username,
+					_id: user._id,
+				},
+				"jwtSecret",
+				{
+					expiresIn: "1h",
+				}
+			);
+
 			res.send({
 				user,
 				token: token,
@@ -116,6 +136,7 @@ module.exports = {
 			{ useFindAndModify: false, new: true }
 		);
 	},
+
 	find_a_user_and_update: async (req, res) => {
 		let id = req.params.userId;
 		let user = req.body;
@@ -125,21 +146,23 @@ module.exports = {
 			.then(() => res.send(`${user.fullname} infos are up to date`))
 			.catch((error) => res.send(error));
 	},
-	send_a_message:async(req,res)=>{
+	send_a_message: async (req, res) => {
 		console.log(req.body.phone_number);
-		const from = "Vonage APIs"
-const to = 216+'+'+req.body.phone_number
-const text = 'thank you for choosing our service , Rent-A-Tool team'
+		const from = "Vonage APIs";
+		const to = 216 + "+" + req.body.phone_number;
+		const text = "thank you for choosing our service , Rent-A-Tool team";
 		vonage.message.sendSms(from, to, text, (err, responseData) => {
 			if (err) {
 				console.log(err);
 			} else {
-				if(responseData.messages[0]['status'] === "0") {
+				if (responseData.messages[0]["status"] === "0") {
 					console.log("Message sent successfully.");
 				} else {
-					console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+					console.log(
+						`Message failed with error: ${responseData.messages[0]["error-text"]}`
+					);
 				}
 			}
-		})
-	}
+		});
+	},
 };
