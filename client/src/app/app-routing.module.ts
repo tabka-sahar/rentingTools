@@ -11,6 +11,8 @@ import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AdminFeedComponent } from './admin-feed/admin-feed.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { UsersListComponent } from './users-list/users-list.component';
+
 const routes: Routes = [];
 
 @NgModule({
@@ -23,9 +25,10 @@ const routes: Routes = [];
       { path: 'users/signup', component: SignupComponent },
       { path: 'tools', component: ToolsComponent },
       { path: 'user/forgot', component: ForgotPasswordComponent },
-      { path: 'admin/feed', component: AdminFeedComponent },
+      { path: 'admin/tools', component: AdminFeedComponent },
       { path: 'tools/slectedTool', component: ToolDetailesComponent },
       { path: 'admin', component: LoginAdminComponent },
+      { path: 'admin/users', component: UsersListComponent },
     ]),
   ],
   exports: [RouterModule],

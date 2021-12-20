@@ -5,7 +5,7 @@ export default class Tools {
     public description: String,
     public price: String,
     public categorie: String,
-    public available: Boolean,
+    public available: boolean,
     public pictures: String,
     public createdAt: any,
     public user: {
