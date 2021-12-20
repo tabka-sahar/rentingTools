@@ -12,4 +12,13 @@ export class TollsService {
   getTolls(): Observable<Tools[]> {
     return this.http.get<Tools[]>('http://localhost:5000/tools');
   }
+  // deleteTolls(): Observable<void> {
+  //   return this.http.delete<void>(`http://localhost:5000/admin/feed/`)
+  // }
+
+
+
+
 }
+
+
