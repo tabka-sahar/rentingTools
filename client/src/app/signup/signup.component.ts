@@ -23,7 +23,7 @@ export class SignupComponent {
   ngOnInit() {
     this.invokeStripe();
   }
-
+// the sign up function for the user that it will add him to the data base
   signup() {
     console.log( '--------', this.username,this.email)
     let url = "http://localhost:5000/users/signup"
@@ -38,11 +38,13 @@ export class SignupComponent {
       console.log(data);
     })
   }
+  //this is the function that will send a user a msg to his phone when he login
 phone(){    let url = "http://localhost:5000/users/phone"
 this.http.post(url,{phone_number: this.phone_number
 }).subscribe((data) => {
   console.log(data);
 })}
+// this is the functions related to the stripe api for the payment 
   makePayment(amount:any) {
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51K5AeAI8HBYKtbzFQjaXDSmaCOcULlIcKAqn8hsX2xe12CgeoXY8C4GpTbkDY2ZaU4rLAfWplKjP2dMpk4xXGGQv00NLMjIBbM',
