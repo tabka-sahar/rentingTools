@@ -6,11 +6,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbareComponent } from './navbare/navbare.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-
 import { ToolsComponent } from './tools/tools.component';
-import {AdminFeedComponent} from './admin-feed/admin-feed.component'
-
 import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AdminFeedComponent } from './admin-feed/admin-feed.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import {AdminUsersComponent} from './admin-users/admin-users.component'
 const routes: Routes = [];
@@ -18,13 +17,14 @@ const routes: Routes = [];
 @NgModule({
   imports: [
     RouterModule.forRoot([
-      { path: '', component: LoginComponent },
+      { path: '', component: HomePageComponent },
+      { path: 'user/login', component: LoginComponent },
       { path: 'user', component: UserProfileComponent },
       { path: 'user/update', component: UpdateProfileComponent },
       { path: 'users/signup', component: SignupComponent },
       { path: 'tools', component: ToolsComponent },
       { path: 'user/forgot', component: ForgotPasswordComponent },
-      {path:'admin/feed',component:AdminFeedComponent},
+      { path: 'admin/feed', component: AdminFeedComponent },
       { path: 'tools/slectedTool', component: ToolDetailesComponent },
       { path: 'admin', component: LoginAdminComponent },
       {path:'admin/users', component: AdminUsersComponent}

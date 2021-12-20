@@ -7,14 +7,23 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-admin-feed',
   templateUrl: './admin-feed.component.html',
-  styleUrls: ['./admin-feed.component.css']
+  styleUrls: ['./admin-feed.component.css'],
 })
 export class AdminFeedComponent implements OnInit {
   tools: Tools[] = [];
 
+  constructor(private tollsService: TollsService, private http: HttpClient) {}
 
-  constructor(private tollsService: TollsService, private http: HttpClient) { }
-
+  // selectedTool?: Tools;
+  // newMessage() {
+  //   if (this.selectedTool) {
+  //     console.log(this.selectedTool);
+  //     // this.selectedTool.changeMessage(this.selectedTool)
+  //   }
+  // }
+  // onSelect(tool: Tools): void {
+  //   this.selectedTool = tool;
+  // }
 
   ngOnInit(): void {
     this.tollsService.getTolls().subscribe((tools) => {
@@ -32,16 +41,13 @@ export class AdminFeedComponent implements OnInit {
       this.tools[index].available = true;
     }
   }
-  deleteTool(_id:string) {
-    const url =`http://localhost:5000/admin/feed/${_id}`
+  deleteTool(_id: String) {
+    const url = `http://localhost:5000/admin/feed/${_id}`;
 
-    console.log(_id)
+    console.log(_id);
     return this.http.delete(url).subscribe(() => {
-      this.ngOnInit()
-      console.log('selected tool deleted')
-    })
-  
+      this.ngOnInit();
+      console.log('selected tool deleted successfully');
+    });
   }
 }
-
-

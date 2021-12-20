@@ -7,6 +7,7 @@ import Tools from '../Models/tool';
   providedIn: 'root',
 })
 export class TollsService {
+  static getolls_of_one_user: any;
   constructor(private http: HttpClient) {}
 
   getTolls(): Observable<Tools[]> {
@@ -16,7 +17,14 @@ export class TollsService {
 
 
 
+  getTolls_of_one_user(id: String): Observable<Tools[]> {
+    return this.http.get<Tools[]>(`http://localhost:5000/tools/${id}`);
+  }
 
+  post_a_toll(post: any) {
+    let url = 'http://localhost:5000/tools';
+    return this.http.post(url, post).subscribe(() => {
+      console.log('tool added');
+    });
+  }
 }
-
-

@@ -3,6 +3,12 @@ var User = require("../models/users");
 var bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
+// const Vonage = require('@vonage/server-sdk')
+
+// const vonage = new Vonage({
+//   apiKey: "a86d206e",
+//   apiSecret: "lAwbmiomkOKiH2bJ"
+// })
 
 module.exports = {
 	find_all_users: async (req, res) => {
@@ -119,4 +125,21 @@ module.exports = {
 			.then(() => res.send(`${user.fullname} infos are up to date`))
 			.catch((error) => res.send(error));
 	},
+// 	send_a_message:async(req,res)=>{
+// 		console.log(req.body.phone_number);
+// 		const from = "Vonage APIs"
+// const to = 216+'+'+req.body.phone_number
+// const text = 'thank you for choosing our service , Rent-A-Tool team'
+// 		vonage.message.sendSms(from, to, text, (err, responseData) => {
+// 			if (err) {
+// 				console.log(err);
+// 			} else {
+// 				if(responseData.messages[0]['status'] === "0") {
+// 					console.log("Message sent successfully.");
+// 				} else {
+// 					console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+// 				}
+// 			}
+// 		})
+// 	}
 };
