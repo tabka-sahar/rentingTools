@@ -1,0 +1,28 @@
+<app-admine-nav></app-admine-nav>
+<div class="usersListContainer">
+  <div *ngFor="let user of users; let index = index">
+    <div class="container">
+      <div class="row">
+        <div>
+          <div class="our-team">
+            <div class="picture">
+              <img class="img-fluid" src="{{ user.profile_image_uri }}" />
+            </div>
+            <div class="team-content">
+              <h3 class="name">{{ user.fullname }}</h3>
+              <h5 class="title">{{ user.phone_number }}</h5>
+              <h5 class="title">{{ user.email }}</h5>
+              <h5 class="title">{{ user.adrress }}</h5>
+            </div>
+            <ul class="social">
+              <li class="fa fa-facebook">
+                <span (click)="banne(user._id)">Banne</span> /
+                <span (click)="allow(user._id)">allow</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   postData() {
     console.log(this.email);
-
+// this is a function that will check if a user is really in the database or not , when the username is wrong it will give an error
+//user does not exist if it exists and the password is wrong it will give an error password is wrong , if its correct it 
+// will get you to the profile page with all of the user's data
     let url = 'http://localhost:5000/users/login';
     this.http
       .post(url, {
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
         }
       });
   }
+  //this is a function that upon clicking the forgot password it will send you an email with a link in it that it will direct you to another page so u can reset ur password
   forgot() {
     let url = 'http://localhost:5000/users/f';
     this.http

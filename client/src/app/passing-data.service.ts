@@ -6,7 +6,6 @@ import { Subject } from 'rxjs';
 export class PassingDataService {
   sendMessage = new Subject ()
   constructor() { }
-
   communicateMessage(msg:any){
     this.sendMessage.next(msg)
   }

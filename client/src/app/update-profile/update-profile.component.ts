@@ -20,7 +20,7 @@ export class UpdateProfileComponent implements OnInit {
     email: this.state.email,
     adrress: this.state.adrress,
   };
-
+//this is the function used to update the user profile
   updateMyprofile = () => {
     console.log('data');
     let url = `http://localhost:5000/users/update/${this.state._id}`;

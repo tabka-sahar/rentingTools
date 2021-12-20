@@ -21,7 +21,11 @@ const userSchema = mongoose.Schema(
 		},
 		fav_category: Array,
 
-		profile_image_uri: { type: String, default: "" },
+		profile_image_uri: {
+			type: String,
+			default:
+				"https://images.unsplash.com/photo-1481214110143-ed630356e1bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+		},
 		verified: { type: Boolean, default: true },
 	},
 	{ timestamps: true, versionKey: false }

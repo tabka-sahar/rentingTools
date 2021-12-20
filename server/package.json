@@ -8,6 +8,7 @@
 		"worker": "node worker.js"
 	},
 	"dependencies": {
+		"@vonage/server-sdk": "^2.10.10",
 		"bcrypt": "^5.0.1",
 		"cloudinary": "^1.27.1",
 		"concurrently": "^6.4.0",
