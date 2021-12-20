@@ -26,7 +26,7 @@ error: any = '';
     }).toPromise().then((data:any)=>{console.log(data) ;if (data.msg==="this user doesn't exist"){ this.error = "this user doesn't exist";
   }
   else if(data.msg==="Wrong password"){this.error = 'Wrong password';}else{
-    this.router.navigate(['/']);
+    this.router.navigate(['/admin/feed']);
   
   };
   })
