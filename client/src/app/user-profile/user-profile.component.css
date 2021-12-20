@@ -4,7 +4,12 @@ body {
   text-align: left;
   background-color: #e2e8f0;
 }
-
+.global {
+  padding: 40px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: -20px 20px 60px #bebebe, 20px -20px 60px #ffffff;
+}
 .container {
   margin-top: 100px;
 }
@@ -13,6 +18,9 @@ body {
 }
 .card {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+h6 {
+  padding-bottom: 30px;
 }
 
 .card {

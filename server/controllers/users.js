@@ -130,6 +130,8 @@ module.exports = {
 		let { email1, password1 } = req.body;
 		console.log(email1);
 		console.log(password1);
+		let salt = await bcrypt.genSalt(10);
+		password1 = await bcrypt.hash(password1, salt);
 		await User.findOneAndUpdate(
 			{ email: email1 },
 			{ password: password1 },
