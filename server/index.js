@@ -2,7 +2,6 @@ var express = require("express");
 var mongoose = require("mongoose");
 var users = require("./routers/users");
 var admin = require("./routers/admin");
-var tools = require("./routers/tools");
 
 var app = express();
 // var GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -16,6 +15,8 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
 
 // app.use(session({
 //   resave: false,
