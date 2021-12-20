@@ -10,7 +10,7 @@ export class ForgotPasswordComponent {
   email: string=""
 password: string=""
   constructor(private http:HttpClient) { }
-
+// this is a post request to update a password when a user forget his password
   post(){
     console.log(this.email);
   
