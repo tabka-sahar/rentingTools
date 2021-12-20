@@ -16,6 +16,7 @@ import { GoogleComponent } from './google/google.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
+import { HomePageComponent } from './home-page/home-page.component';
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireStorageModule } from 'angularfire2/storage';
 
@@ -35,6 +36,7 @@ import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
     LoginAdminComponent,
     FooterComponent,
     ToolDetailesComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
