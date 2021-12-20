@@ -14,16 +14,16 @@ export class AdminFeedComponent implements OnInit {
 
   constructor(private tollsService: TollsService, private http: HttpClient) {}
 
-  selectedTool?: Tools;
-  newMessage() {
-    if (this.selectedTool) {
-      console.log(this.selectedTool);
-      // this.selectedTool.changeMessage(this.selectedTool)
-    }
-  }
-  onSelect(tool: Tools): void {
-    this.selectedTool = tool;
-  }
+  // selectedTool?: Tools;
+  // newMessage() {
+  //   if (this.selectedTool) {
+  //     console.log(this.selectedTool);
+  //     // this.selectedTool.changeMessage(this.selectedTool)
+  //   }
+  // }
+  // onSelect(tool: Tools): void {
+  //   this.selectedTool = tool;
+  // }
 
   ngOnInit(): void {
     this.tollsService.getTolls().subscribe((tools) => {
