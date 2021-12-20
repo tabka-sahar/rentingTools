@@ -2,7 +2,7 @@ var express = require("express");
 var mongoose = require("mongoose");
 var users = require("./routers/users");
 var admin = require("./routers/admin");
-
+var tools = require("./routers/tools")
 var app = express();
 // var GoogleStrategy = require('passport-google-oauth20').Strategy;
 // var createError = require('http-errors');
