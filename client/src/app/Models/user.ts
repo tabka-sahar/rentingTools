@@ -1,13 +1,14 @@
-export interface Users{
-    username: String;
-        fullname: String;
-        adrress: String;
-        connected: false;
-        email: String;
-        phone_number: String;
-        fav_category: Array<String>;
-        profile_image_uri: String;
-        verified: boolean;
-
+export default class User {
+  constructor(
+    public _id: String,
+    public username: String,
+    public fullname: String,
+    public adrress: String,
+    public connected: false,
+    public email: String,
+    public phone_number: String,
+    public fav_category: Array<String>,
+    public profile_image_uri: String,
+    public verified: boolean
+  ) {}
 }
- 

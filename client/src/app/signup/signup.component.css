@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
-
 .form-structor {
   background-color: #222;
   border-radius: 15px;
@@ -8,12 +7,15 @@
   width: 350px;
   position: relative;
   overflow: hidden;
-  left: 40%;
+  left: 38%;
+  margin-top: 5%;
 }
-#forgot{color: rgb(71, 66, 66);}
+#forgot {
+  color: rgb(71, 66, 66);
+}
 .form-structor::after {
-  content: '';
-  opacity: .8;
+  content: "";
+  opacity: 0.8;
   position: absolute;
   top: 0;
   right: 0;
@@ -33,20 +35,15 @@
   transform: translate(-50%, -50%);
   width: 65%;
   z-index: 5;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-
-
-
 
 .form-structor .signup .form-title {
   color: #fff;
   font-size: 1.7em;
   text-align: center;
 }
-
-
 
 .form-structor .signup .form-holder {
   border-radius: 15px;
@@ -55,15 +52,15 @@
   margin-top: 50px;
   opacity: 1;
   visibility: visible;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .form-structor .signup .form-holder .input {
   border: 0;
   outline: none;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   display: block;
   height: 30px;
   line-height: 30px;
@@ -95,18 +92,20 @@
   cursor: pointer;
   opacity: 1;
   visibility: visible;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .form-structor .signup .submit-btn:hover {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   background-color: rgba(0, 0, 0, 0.8);
 }
-#pay{position: relative;
+#pay {
+  position: relative;
   margin-top: 20%;
-left: 80%;}
+  left: 80%;
+}
 
 /* .form-structor .login {
   position: absolute;

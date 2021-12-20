@@ -21,10 +21,15 @@ export class TollsService {
     return this.http.get<Tools[]>(`http://localhost:5000/tools/${id}`);
   }
 
-  post_a_toll(post: any) {
+  post_a_toll(post: Object) {
+    console.log(post);
     let url = 'http://localhost:5000/tools';
-    return this.http.post(url, post).subscribe(() => {
-      console.log('tool added');
+    return this.http.post(url, post, { responseType: 'text' });
+  }
+
+  tool_available_or_not(id: String, bool: boolean) {
+    return this.http.patch(`http://localhost:5000/tools/${id}`, {
+      available: bool,
     });
   }
 }

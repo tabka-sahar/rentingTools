@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.servece';
 import { Subscription } from 'rxjs';
 import Tools from '../Models/tool';
+import { NavbareComponent } from '../navbare/navbare.component';
 
 @Component({
   selector: 'app-tool-detailes',

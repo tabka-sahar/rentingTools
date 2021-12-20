@@ -18,6 +18,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ToolDetailesComponent } from './tool-detailes/tool-detailes.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { HomeNavbareComponent } from './home-navbare/home-navbare.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { AdmineNavComponent } from './admine-nav/admine-nav.component';
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireStorageModule } from 'angularfire2/storage';
 
@@ -39,6 +42,9 @@ import { HomePageComponent } from './home-page/home-page.component';
     ToolDetailesComponent,
     AdminUsersComponent,
     HomePageComponent,
+    HomeNavbareComponent,
+    UsersListComponent,
+    AdmineNavComponent,
   ],
   imports: [
     BrowserModule,
