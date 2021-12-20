@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import Tools from '../Models/tool';
-import { TollsService } from '../services/tolls.service';
+              import { TollsService } from '../services/tolls.service';
 import { DataService } from '../services/data.servece';
 
 @Component({

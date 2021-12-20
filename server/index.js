@@ -72,6 +72,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.get('http:localhost:5000/google/callback',(req,res)=>{res.end("hi")})
 app.use("/users", users)
 app.use("/admin",admin)
+app.use("/tools",tools)
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/rentingTools");
