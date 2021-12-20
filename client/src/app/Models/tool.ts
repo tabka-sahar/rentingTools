@@ -1,6 +1,8 @@
 export default class Tools {
   constructor(
-    public _id :string,
+
+    public _id: String,
+
     public title: String,
     public description: String,
     public price: String,

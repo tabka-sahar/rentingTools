@@ -7,7 +7,6 @@ var tools = require("./routers/tools");
 var app = express();
 // var GoogleStrategy = require('passport-google-oauth20').Strategy;
 // var createError = require('http-errors');
-
 // const session = require('express-session');
 
 var cors = require("cors");
@@ -20,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(session({
 //   resave: false,
 //   saveUninitialized: true,
-//   secret: 'SECRET' 
+//   secret: 'SECRET'
 // }));
 
 // app.get('/', function(req, res) {
@@ -40,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.get('/google',passport.authenticate('google', { scope : ['profile', 'email'] }))
 
 // app.get('/sucess', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
-  
+
 // console.log('hhhhhhhh');
 //   res.redirect('http://localhost:4200');
 // })
@@ -70,9 +69,9 @@ app.use(express.urlencoded({ extended: true }));
 // }
 // ));
 // app.get('http:localhost:5000/google/callback',(req,res)=>{res.end("hi")})
-app.use("/users", users)
-app.use("/admin",admin)
-app.use("/tools",tools)
+app.use("/users", users);
+app.use("/admin", admin);
+app.use("/tools", tools);
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/rentingTools");
