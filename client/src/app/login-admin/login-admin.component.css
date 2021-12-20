@@ -136,6 +136,7 @@
       grid-template-columns: 50% 50%;
       align-items: center;
   }
+  p{color: red;}
   #continue input{
     font-size: 16px;
     line-height: 28px;

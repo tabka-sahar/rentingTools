@@ -42,6 +42,7 @@
             <div class="formbg-inner padding-horizontal--48">
               <span class="padding-bottom--15">Sign in to your account</span>
               <form id="stripe-login">
+                <p>{{error}}</p>
                 <div class="field padding-bottom--24">
                   <label for="email">Email</label>
                   <input [(ngModel)]="email" type="email" name="email" placeholder="email">

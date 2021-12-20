@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-admin',
@@ -9,7 +10,9 @@ import { HttpClient } from '@angular/common/http';
 export class LoginAdminComponent implements OnInit {
   email: string=""
 password: string=""
-  constructor(private http:HttpClient) { }
+error: any = '';
+
+  constructor(private http:HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,8 +23,11 @@ password: string=""
     this.http.post(url,{
       email:this.email,
       password:this.password
-    }).toPromise().then((data:any)=>{console.log(data) ;if (data.msg==="this user doesn't exist"){alert("this user doesn't exist")}
-  if(data.msg==="Wrong password"){alert('Wrong password')}else{console.log(data)
+    }).toPromise().then((data:any)=>{console.log(data) ;if (data.msg==="this user doesn't exist"){ this.error = "this user doesn't exist";
+  }
+  else if(data.msg==="Wrong password"){this.error = 'Wrong password';}else{
+    this.router.navigate(['/']);
+  
   };
   })
     
